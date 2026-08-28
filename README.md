@@ -1,49 +1,7 @@
-# Trabajo Practico de Repaso - Operacion Rescate II
-
-Este proyecto fue creado para practicar depuracion de backend con Node.js, Express, JWT, autenticacion y autorizacion.
-
-Importante: este backend tiene errores intencionales. La idea NO es rehacerlo, sino analizarlo, detectar problemas y corregirlos.
-
-## Requisitos
-
-- Node.js 18+
-- npm
-
-## Instalacion
-
-1. Copiar variables de entorno:
-
-```bash
-cp .env.example .env
-```
-
-2. Instalar dependencias:
-
-```bash
-npm install
-```
-
-3. Ejecutar el proyecto:
-
-```bash
-npm run dev
-```
-
-## Objetivo para estudiantes
-
-- Lograr registro y login funcional.
-- Proteger rutas correctamente con JWT.
-- Corregir respuestas HTTP.
-- Documentar cada error encontrado.
-
-## Estructura
-
-- src/server.js
-- src/app.js
-- src/routes
-- src/controllers
-- src/middleware
-- src/utils
-- src/data
-- docs/REGISTRO_ERRORES_TEMPLATE.md
-
+1. authController: linea 10,47,53: falta un return --> en los otros res.status usan return --> poner el return
+2. "": linea 50: el compare tiene los datos al revez --> consoles.log y descrubirnedo que esta ahi el problema --> cambiar de lado los datos
+3. "": 45: falta autenticacion de email y password --> dejaba no poner caracteres --> agregar la verificacion
+4. token.js: 11: le faltaba una s --> no estaba de colorcito --> agregar la s
+5. "": 6: tenia doble t --> plena vista angy --> sacar la t😂
+6. "": 7: poquito tiempo --> nos dijo la ia --> cambiar el tiempo
+8. usercontroller: linea 14: agarra el id del body --> podes hackearle la cuenta a cualquiera ñamñam😺😺🤫♥😡🤫🥀 --> usar solo el del token (req.user.id)

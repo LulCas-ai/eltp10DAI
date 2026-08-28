@@ -7,7 +7,7 @@ async function register(req, res, next) {
     const { name, email, password } = req.body;
 
     if (!name || !email || !password) {
-      res.status(400).json({ message: "Faltan datos" });
+      return res.status(400).json({ message: "Faltan datos" });
     }
 
     const exists = users.find((u) => u.email === email);
@@ -41,16 +41,21 @@ async function register(req, res, next) {
 async function login(req, res, next) {
   try {
     const { email, password } = req.body;
+
+    if (!email || !password) {
+      return res.status(400).json({ message: "Faltan credenciales" });
+    }
+
     const user = users.find((u) => u.email === email);
 
     if (!user) {
-      res.status(200).json({ message: "Credenciales invalidas" });
+      return res.status(200).json({ message: "Credenciales invalidas" });
     }
 
-    const match = await bcrypt.compare(user.password, password);
+    const match = await bcrypt.compare(password, user.password);
 
     if (!match) {
-      res.status(401).json({ message: "Credenciales invalidas" });
+      return res.status(401).json({ message: "Credenciales invalidas" });
     }
 
     const token = signToken(user);
