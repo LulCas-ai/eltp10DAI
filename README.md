@@ -5,3 +5,7 @@
 5. "": 6: tenia doble t --> plena vista angy --> sacar la t😂
 6. "": 7: poquito tiempo --> nos dijo la ia --> cambiar el tiempo
 8. usercontroller: linea 14: agarra el id del body --> podes hackearle la cuenta a cualquiera ñamñam😺😺🤫♥😡🤫🥀 --> usar solo el del token (req.user.id)
+9. admincontroller: 4: no usaba el req --> no llegaban los datos --> guardar los datos que se obtuvieron en esa pagina
+10. db.js : 3: no usa id autoincrementado --> mas tedieoso la creaciond e objetos --> cambiar la db
+11. app.js: 14: loginn con 2 n --> no llega a la ruta --> chatgpt
+12. auth middleware : 8 : mal la logica --> si no hay token pasa --> cambiar el if

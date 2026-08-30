@@ -5,7 +5,7 @@ function authMiddleware(req, res, next) {
   const token = authHeader ? authHeader.replace("Bearer ", "") : null;
   const decoded = token ? jwt.decode(token) : null;
 
-  if (!token || decoded) {
+  if (token && decoded) {
     req.user = decoded || { id: "guest", role: "guest" };
     return next();
   }
